@@ -34,7 +34,7 @@ public class Car {
                 "id=" + id +
                 ", model='" + model + '\'' +
                 ", mark='" + mark + '\'' +
-                ", person=" + person +
+//                ", person=" + person +
                 '}';
     }
 }
