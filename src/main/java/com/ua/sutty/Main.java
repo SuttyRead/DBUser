@@ -10,22 +10,32 @@ import com.ua.sutty.model.Person;
 public class Main {
 
     public static void main(String[] args) {
-
-//        Person alexandr = Person.builder()
-//                .name("Alexandr")
-//                .build();
-//        Car car = Car.builder()
-//                .mark("Q7")
-//                .model("audi")
-//                .person(alexandr)
-//                .build();
+        PersonDAO personDAO = new PersonDAOMySQLImpl();
+        Person alexandr = personDAO.getPerson(4);
+        Car car1 = Car.builder()
+                .mark("Q10")
+                .model("audi")
+                .person(alexandr)
+                .build();
+        Car car2 = Car.builder()
+                .mark("Q11")
+                .model("audi")
+                .person(alexandr)
+                .build();
+        Car car3 = Car.builder()
+                .mark("Q12")
+                .model("audi")
+                .person(alexandr)
+                .build();
 //
-//        PersonDAO personDAO = new PersonDAOMySQLImpl();
+
 //        personDAO.addPerson(alexandr);
         CarDAO carDAO = new CarDAOMySQLImpl();
-//        carDAO.addCar(car);
-        Car car = carDAO.getCar(4);
-        System.out.println(car);
+        carDAO.addCar(car1);
+        carDAO.addCar(car2);
+        carDAO.addCar(car3);
+//        Car car = carDAO.getCar(4);
+//        System.out.println(car);
     }
 
 }
